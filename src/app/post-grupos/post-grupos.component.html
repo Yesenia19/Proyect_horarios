@@ -1,0 +1,133 @@
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/6.0.0/css/bootstrap.min.css" integrity="sha386-Gn5386xqQ1aoWXA+058RXPxPg6fy6IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,600,700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/ionicons@6.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+<form (ngSubmit)="onSubmit()" [formGroup]="postGruposForm">
+  <div class="row no-gutters bg-dark">
+    
+    <div class="col-xl-7 col-lg-12 d-flex">
+         <div class="container align-self-center p-6">
+             <h1 class="font-weight-bold mb-3">Registro de grupos</h1>
+              <div class="form-row mb-2">
+                <div class="form-group col-md-12">
+                <div class="row">
+                  <div class="col-6">
+                    <label for="id_ciclo_escolar" class="form-label">Ciclo escolar:
+                    </label> <br>
+                    <label>Enero-Abril 2023</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <label for="cuatrimestre" class="form-label">Cuatrimestre:
+                    </label> <br>
+                    <select  class="btn-group" id = "cuatrimestre" name="cuatrimestre" formControlName="cuatrimestre" required="">
+                      <option value = "0">0</option>
+                      <option value = "1">1</option>
+                      <option value = "2">2</option>
+                      <option value = "3">3</option>
+                      <option value = "4">4</option>
+                      <option value = "5">5</option>
+                      <option value = "6">6</option>
+                      <option value = "7">7</option>
+                      <option value = "8">8</option>
+                      <option value = "9">9</option>
+                      <option value = "10">10</option>
+                      <option value = "11">11</option>
+                    </select>
+                    <div *ngIf="postGruposForm.get('cuatrimestre')?.touched && postGruposForm.get('cuatrimestre')?.errors?.['required']" 
+                      class="alert alert-danger"> Selecciona un cuatrimestre
+                    </div>
+
+                  </div>
+                
+                  <div class="col-6">
+                    <label for="no_grupo" class="form-label">Número de grupos:
+                    </label><br>
+                    <input type="number" class="form-control" id="no_grupo" name="no_grupo" required formControlName="no_grupo" min="1">
+                    <div *ngIf="postGruposForm.get('no_grupo')?.touched && postGruposForm.get('no_grupo')?.errors?.['required']" 
+                    class="alert alert-danger">Ingresa el numero de grupos.
+                    </div>
+                    <div *ngIf="postGruposForm.get('no_grupo')?.touched && postGruposForm.get('no_grupo')?.errors?.['minlength']" 
+                                class="alert alert-danger"> Debe ser maximo un caracter.
+                                </div> 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                      <label for="hora_entrada_minima" class="form-label">Hora de entrada mínima:
+                      </label><br>
+                      <select  class="btn-group" id = "hora_entrada_minima" name="hora_entrada_minima" formControlName="hora_entrada_minima" required="">
+                        <option value = "7">7 hrs.</option>
+                        <option value = "8">8 hrs.</option>
+                        <option value = "9">9 hrs.</option>
+                        <option value = "10">10 hrs.</option>
+                        <option value = "11">11 hrs.</option>
+                        <option value = "12">12 hrs.</option>
+                        <option value = "13">13 hrs.</option>
+                        <option value = "14">14 hrs.</option>
+                        <option value = "15">15 hrs.</option>
+                        <option value = "16">16 hrs.</option>
+                        <option value = "17">17 hrs.</option>
+                        <option value = "18">18 hrs.</option>
+                        <option value = "19">19 hrs.</option>
+                        <option value = "20">20 hrs.</option>
+                        <option value = "21">21 hrs.</option>
+                      </select>
+                      <div *ngIf="postGruposForm.get('hora_entrada_minima')?.touched && postGruposForm.get('hora_entrada_minima')?.errors?.['required']" 
+                      class="alert alert-danger"> Este campo es requerido.
+                      </div>
+                  </div>
+                
+                  <div class="col-6">
+                      <label for="hora_salida_maxima" class="form-label">Hora de salida maxima:
+                      </label><br>
+                      <select  class="btn-group" id = "hora_salida_maxima" name="hora_salida_maxima" formControlName="hora_salida_maxima" required="">
+                        <option value = "7">7 hrs.</option>
+                        <option value = "8">8 hrs.</option>
+                        <option value = "9">9 hrs.</option>
+                        <option value = "10">10 hrs.</option>
+                        <option value = "11">11 hrs.</option>
+                        <option value = "12">12 hrs.</option>
+                        <option value = "13">13 hrs.</option>
+                        <option value = "14">14 hrs.</option>
+                        <option value = "15">15 hrs.</option>
+                        <option value = "16">16 hrs.</option>
+                        <option value = "17">17 hrs.</option>
+                        <option value = "18">18 hrs.</option>
+                        <option value = "19">19 hrs.</option>
+                        <option value = "20">20 hrs.</option>
+                        <option value = "21">21 hrs.</option>
+                      </select>
+                      <div *ngIf="postGruposForm.get('hora_salida_maxima')?.touched && postGruposForm.get('hora_salida_maxima')?.errors?.['required']" 
+                      class="alert alert-danger"> Este campo es requerido.
+                      </div>
+                      <div *ngIf="postGruposForm.get('hora_salida_maxima')?.touched && postGruposForm.get('hora_salida_maxima')?.errors?.['minlength']" 
+                      class="alert alert-danger">Debe ser maximo un caracter.
+                      </div> 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                      <label for="carrera" class="form-label">Carrera:
+                      </label><br>
+                      <select  class="btn-group" (ngModel) ="selectedCarrera.id_carrera" id = "carrera" name="carrera" formControlName="carrera" required="selecciona la carrera">
+                        <option *ngFor = "let c of carrera" value = {{c.id_carrera}}>
+                          {{c.nombre_carrera}}
+                        </option>
+                      </select>
+                      <div *ngIf="postGruposForm.get('carrera')?.touched && postGruposForm.get('carrera')?.errors?.['required']" 
+                      class="alert alert-danger"> Selecciona una carrera
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  </div>
+
+    <div class="d-grid gap-2  float-end">
+        <button type="submit" class="btn btn-primary width-100" [disabled]="postGruposForm.invalid">Guardar</button>
+      </div>
+</form>

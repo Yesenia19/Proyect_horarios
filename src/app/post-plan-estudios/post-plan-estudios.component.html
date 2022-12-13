@@ -1,0 +1,65 @@
+
+<form (ngSubmit)="onSubmit()" [formGroup]="postPlanEstudios">
+  Plan de estudios: 
+  
+  <div class="col-6" >
+    <div>
+      <div class="card">
+        <div class="col-6">
+          <div>
+            <label for="carrera" class="form-label">Carrera:</label> <br/>
+            <select class="col-6" (ngModel) ="selectedCarrera.id_carrera" id = "carrera" name="carrera" formControlName="carrera" required="">
+              <option *ngFor = "let c of carrera" value = {{c.id_carrera}}>
+                {{c.nombre_carrera}}
+              </option>
+            </select>
+          </div>
+          <div>
+            <label for="cuatrimestre" class="form-label">Cuatrimestre:</label>
+            <input type="number" class="form-control" id="cuatrimestre" name="cuatrimestre" required formControlName="cuatrimestre"/>
+            <div *ngIf="postPlanEstudios.get('cuatrimestre')?.touched && postPlanEstudios.get('cuatrimestre')?.errors?.['required']" 
+            class="alert alert-danger"> Este campo es requerido.
+            </div>
+            <div *ngIf="postPlanEstudios.get('cuatrimestre')?.touched && postPlanEstudios.get('cuatrimestre')?.errors?.['minlength']" 
+            class="alert alert-danger">Debe ser maximo un caracter.
+            </div>  
+          </div>
+          <div>
+            <label for="nombre_materia" class="form-label">Materia:</label> <br/>
+            <input type="text" class="form-control" id="nombre_materia" name="nombre_materia" required formControlName="nombre_materia">
+            <div *ngIf="postPlanEstudios.get('nombre_materia')?.touched && postPlanEstudios.get('nombre_materia')?.errors?.['required']" 
+            class="alert alert-danger"> Este campo es requerido.
+            </div>
+            <div *ngIf="postPlanEstudios.get('nombre_materia')?.touched && postPlanEstudios.get('nombre_materia')?.errors?.['minlength']" 
+            class="alert alert-danger">Debe ser maximo un caracter.
+            </div> 
+          </div>
+          <div>
+            <label for="total_horas" class="form-label">Total de horas:</label>
+            <input type="number" class="form-control" id="total_horas" name="total_horas" required formControlName="total_horas" min="0">
+            <div *ngIf="postPlanEstudios.get('total_horas')?.touched && postPlanEstudios.get('total_horas')?.errors?.['required']" 
+            class="alert alert-danger"> Este campo es requerido.
+            </div>
+            <div *ngIf="postPlanEstudios.get('total_horas')?.touched && postPlanEstudios.get('total_horas')?.errors?.['minlength']" 
+            class="alert alert-danger">Debe ser maximo un caracter.
+            </div> 
+          </div>
+          <div>
+            <label for="total_horas_semana" class="form-label">Total de horas a la semana:</label>
+            <input type="number" class="form-control" id="total_horas_semana" name="total_horas_semana" required formControlName="total_horas_semana" min="0">
+            <div *ngIf="postPlanEstudios.get('total_horas_semana')?.touched && postPlanEstudios.get('total_horas_semana')?.errors?.['required']" 
+            class="alert alert-danger"> Este campo es requerido.
+            </div>
+            <div *ngIf="postPlanEstudios.get('total_horas_semana')?.touched && postPlanEstudios.get('total_horas_semana')?.errors?.['minlength']" 
+            class="alert alert-danger">Debe ser maximo un caracter.
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="d-grid gap-2  float-end">
+    <button type="submit" class="btn btn-info btn-lg" [disabled]="postPlanEstudios.invalid">Guardar</button>
+  </div>
+</form>

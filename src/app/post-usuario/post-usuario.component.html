@@ -1,0 +1,84 @@
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+<form (ngSubmit)="onSubmit()" [formGroup]="postUsuarioForm">
+  <div class="row no-gutters bg-dark">
+    
+    <div class="col-xl-7 col-lg-12 d-flex">
+         <div class="container align-self-center p-6">
+             <h1 class="font-weight-bold mb-3">Registro de Usuario</h1>
+              <div class="form-row mb-2">
+                <div class="form-group col-md-12">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="nombre_usuario"class="font-weight-bold">Nombre del usuario </label>
+                             <input type="text" class="form-control" placeholder="usuario" id="nombre_usuario" name="nombre_usuario" required formControlName="nombre_usuario" >
+                             <div *ngIf="postUsuarioForm.get('nombre_usuario')?.touched && postUsuarioForm.get('nombre_usuario')?.errors?.['required']"
+                              class="alert alert-danger"> Este campo es requerido.
+                              </div>
+                              <div *ngIf="postUsuarioForm.get('nombre_usuario')?.touched && postUsuarioForm.get('nombre_usuario')?.errors?.['minlength']" 
+                              class="alert alert-danger"> Debe ser maximo un caracter.
+                              </div> 
+                  </div>
+                  <div class="col-4">
+                    <label for="apellido_paterno"class="font-weight-bold">Apellido paterno</label>
+                             <input type="text" class="form-control" placeholder="apellido_paterno" id="apellido_paterno" name="apellido_paterno" required formControlName="apellido_paterno" >
+                             <div *ngIf="postUsuarioForm.get('apellido_paterno')?.touched && postUsuarioForm.get('apellido_paterno')?.errors?.['required']"
+                              class="alert alert-danger"> Este campo es requerido.
+                              </div>
+                              <div *ngIf="postUsuarioForm.get('apellido_paterno')?.touched && postUsuarioForm.get('apellido_paterno')?.errors?.['minlength']" 
+                              class="alert alert-danger"> Debe ser maximo un caracter.
+                              </div> 
+                  </div>
+                  <div class="col-4">
+                    <label for="apellido_materno"class="font-weight-bold">Apellido materno</label>
+                             <input type="text" class="form-control" placeholder="Apellido materno" id="apellido_materno" name="apellido_materno" required formControlName="apellido_materno" >
+                             <div *ngIf="postUsuarioForm.get('apellido_materno')?.touched && postUsuarioForm.get('apellido_materno')?.errors?.['required']"
+                              class="alert alert-danger"> Este campo es requerido.
+                              </div>
+                              <div *ngIf="postUsuarioForm.get('apellido_materno')?.touched && postUsuarioForm.get('apellido_materno')?.errors?.['minlength']" 
+                              class="alert alert-danger"> Debe ser maximo un caracter.
+                              </div> 
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                      <label for="email"class="font-weight-bold">Email </label>
+                               <input type="email" class="form-control" placeholder="email" id="email" name="email" required formControlName="email" >
+                               <div *ngIf="postUsuarioForm.get('email')?.touched && postUsuarioForm.get('email')?.errors?.['required']"
+                                class="alert alert-danger"> Este campo es requerido.
+                                </div>
+                                <div *ngIf="postUsuarioForm.get('email')?.touched && postUsuarioForm.get('email')?.errors?.['minlength']" 
+                                class="alert alert-danger"> Debe ser maximo un caracter.
+                                </div> 
+                    </div>
+                    <div class="col-4">
+                      <label for="tipo_usuario"class="font-weight-bold">Tipo de usuario</label>
+                      <select  class="form-select" id = "tipo_usuario" name="tipo_usuario" formControlName="tipo_usuario" required="">
+                        <option value="" selected>Selecciona usuario</option>
+                        <option value = 1>Administrador</option>
+                        <option value = 2>Secretaria academica</option>
+                        <option value = 3>Coordinador academico</option>
+                        <option value = 4>Coordinador de idiomas</option>
+                        <option value = 5>Usuario</option>
+                      </select>
+                               <div *ngIf="postUsuarioForm.get('tipo_usuario')?.touched && postUsuarioForm.get('tipo_usuario')?.errors?.['required']"
+                                class="alert alert-danger"> Este campo es requerido.
+                                </div>
+                                <div *ngIf="postUsuarioForm.get('tipo_usuario')?.touched && postUsuarioForm.get('tipo_usuario')?.errors?.['minlength']" 
+                                class="alert alert-danger"> Debe ser maximo un caracter.
+                                </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+    <div class="d-grid gap-2  float-end">
+        <button type="submit" class="btn btn-primary width-100" [disabled]="postUsuarioForm.invalid">Guardar</button>
+      </div>
+</form>

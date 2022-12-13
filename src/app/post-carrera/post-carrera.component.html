@@ -1,0 +1,45 @@
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+ <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+ 
+<form (ngSubmit)="onSubmit()" [formGroup]="postCarreraForm">
+    <div class="row no-gutters bg-dark">
+        <div class="col-xl-5 col-lg-12 register-bg"></div>  <!-- Icono -->
+        <div class="col-xl-7 col-lg-12 d-flex">
+             <div class="container align-self-center p-6">
+                 <h1 class="font-weight-bold mb-3">Registro de carrera</h1>
+                  <div class="form-row mb-2">
+                    <div class="form-group col-md-12">
+                             <label for="nombre_carrera"class="font-weight-bold">Nombre de la carrera </label>
+                             <input type="text" class="form-control" placeholder="Carrera" id="nombre_carrera" name="nombre_carrera" required formControlName="nombre_carrera" >
+                             <div *ngIf="postCarreraForm.get('nombre_carrera')?.touched && postCarreraForm.get('nombre_carrera')?.errors?.['required']"
+                              class="alert alert-danger"> Este campo es requerido.
+                              </div>
+                              <div *ngIf="postCarreraForm.get('nombre_carrera')?.touched && postCarreraForm.get('nombre_carrera')?.errors?.['minlength']" 
+                              class="alert alert-danger"> Debe ser maximo un caracter.
+                              </div> 
+                         </div>
+                     </div>
+                     <div class="form-group mb-3">
+                          <label for="coordinador_carrera" class="font-weight-bold">Nombre coordinador:
+                          </label><br>
+                          <select  class="form-select col-md-12 " (ngModel) ="selectedUser.id_usuario" id = "coordinador_carrera" name="coordinador_carrera" formControlName="coordinador_carrera" required="">
+                            <option value="" selected>Selecciona coordinador</option>
+                             <option *ngFor = "let c of coordinadores" value = {{c.id_usuario}}>
+                                 {{c.nombre_usuario + " " + c.apellido_paterno + " " + c.apellido_materno}}
+                               </option>
+                          </select>
+                          <div *ngIf="postCarreraForm.get('coordinador_carrera')?.touched && postCarreraForm.get('coordinador_carrera')?.errors?.['required']" 
+                            class="alert alert-danger"> Selecciona el coordinador asignado.
+                          </div>
+                     </div>  
+             </div>
+        </div>
+    </div>
+
+    <div class="d-grid gap-2  float-end">
+        <button type="submit" class="btn btn-primary width-100" [disabled]="postCarreraForm.invalid">Guardar</button>
+      </div>
+</form>
+

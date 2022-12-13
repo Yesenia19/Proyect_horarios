@@ -1,0 +1,265 @@
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+
+<form (ngSubmit)="onSubmit()" [formGroup]="postDisponibilidadForm">
+  <div class="row no-gutters bg-dark">
+    
+    <div class="col-xl-7 col-lg-12 d-flex">
+         <div class="container align-self-center p-6">
+             <h1 class="font-weight-bold mb-3">Registro de disponibilidad</h1>
+              <div class="form-row mb-2">
+                <div class="form-group col-md-12">
+                  <div class="col-4">
+                    <label for="id_ciclo_escolar" class="form-label">Ciclo escolar:
+                    </label> <br>
+                    <label>Enero-Abril 2023</label>
+                  </div>
+                  <div class="col-4">
+                    <label for="semana" class="form-label">Disponibilidad semanal:
+                    </label><br>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Día</th>
+                          <th scope="col">Entrada</th>
+                          <th scope="col">Salida</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Lunes</td>
+                          <td><select  class="btn-group" id = "lunesEntrada" name="lunesEntrada" formControlName="lunesEntrada">
+                              <option value = "7">7 hrs.</option>
+                              <option value = "8">8 hrs.</option>
+                              <option value = "9">9 hrs.</option>
+                              <option value = "10">10 hrs.</option>
+                              <option value = "11">11 hrs.</option>
+                              <option value = "12">12 hrs.</option>
+                              <option value = "13">13 hrs.</option>
+                              <option value = "14">14 hrs.</option>
+                              <option value = "15">15 hrs.</option>
+                              <option value = "16">16 hrs.</option>
+                              <option value = "17">17 hrs.</option>
+                              <option value = "18">18 hrs.</option>
+                              <option value = "19">19 hrs.</option>
+                              <option value = "20">20 hrs.</option>
+                              <option value = "21">21 hrs.</option>
+                            </select></td>
+                          <td><select  class="btn-group" id = "lunesSalida" name="lunesSalida" formControlName="lunesSalida">
+                              <option value = "7">7 hrs.</option>
+                              <option value = "8">8 hrs.</option>
+                              <option value = "9">9 hrs.</option>
+                              <option value = "10">10 hrs.</option>
+                              <option value = "11">11 hrs.</option>
+                              <option value = "12">12 hrs.</option>
+                              <option value = "13">13 hrs.</option>
+                              <option value = "14">14 hrs.</option>
+                              <option value = "15">15 hrs.</option>
+                              <option value = "16">16 hrs.</option>
+                              <option value = "17">17 hrs.</option>
+                              <option value = "18">18 hrs.</option>
+                              <option value = "19">19 hrs.</option>
+                              <option value = "20">20 hrs.</option>
+                              <option value = "21">21 hrs.</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                          <td>Martes</td>
+                          <td><select  class="btn-group" id = "martesEntrada" name="martesEntrada" formControlName="martesEntrada">
+                              <option value = "7">7 hrs.</option>
+                              <option value = "8">8 hrs.</option>
+                              <option value = "9">9 hrs.</option>
+                              <option value = "10">10 hrs.</option>
+                              <option value = "11">11 hrs.</option>
+                              <option value = "12">12 hrs.</option>
+                              <option value = "13">13 hrs.</option>
+                              <option value = "14">14 hrs.</option>
+                              <option value = "15">15 hrs.</option>
+                              <option value = "16">16 hrs.</option>
+                              <option value = "17">17 hrs.</option>
+                              <option value = "18">18 hrs.</option>
+                              <option value = "19">19 hrs.</option>
+                              <option value = "20">20 hrs.</option>
+                              <option value = "21">21 hrs.</option>
+                            </select></td>
+                          <td><select  class="btn-group" id = "martesSalida" name="martesSalida" formControlName="martesSalida">
+                              <option value = "7">7 hrs.</option>
+                              <option value = "8">8 hrs.</option>
+                              <option value = "9">9 hrs.</option>
+                              <option value = "10">10 hrs.</option>
+                              <option value = "11">11 hrs.</option>
+                              <option value = "12">12 hrs.</option>
+                              <option value = "13">13 hrs.</option>
+                              <option value = "14">14 hrs.</option>
+                              <option value = "15">15 hrs.</option>
+                              <option value = "16">16 hrs.</option>
+                              <option value = "17">17 hrs.</option>
+                              <option value = "18">18 hrs.</option>
+                              <option value = "19">19 hrs.</option>
+                              <option value = "20">20 hrs.</option>
+                              <option value = "21">21 hrs.</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                          <td>Miercoles</td>
+                          <td><select  class="btn-group" id = "miercolesEntrada" name="miercolesEntrada" formControlName="miercolesEntrada">
+                              <option value = "7">7 hrs.</option>
+                              <option value = "8">8 hrs.</option>
+                              <option value = "9">9 hrs.</option>
+                              <option value = "10">10 hrs.</option>
+                              <option value = "11">11 hrs.</option>
+                              <option value = "12">12 hrs.</option>
+                              <option value = "13">13 hrs.</option>
+                              <option value = "14">14 hrs.</option>
+                              <option value = "15">15 hrs.</option>
+                              <option value = "16">16 hrs.</option>
+                              <option value = "17">17 hrs.</option>
+                              <option value = "18">18 hrs.</option>
+                              <option value = "19">19 hrs.</option>
+                              <option value = "20">20 hrs.</option>
+                              <option value = "21">21 hrs.</option>
+                            </select></td>
+                          <td><select  class="btn-group" id = "miercolesSalida" name="miercolesSalida" formControlName="miercolesSalida">
+                              <option value = "7">7 hrs.</option>
+                              <option value = "8">8 hrs.</option>
+                              <option value = "9">9 hrs.</option>
+                              <option value = "10">10 hrs.</option>
+                              <option value = "11">11 hrs.</option>
+                              <option value = "12">12 hrs.</option>
+                              <option value = "13">13 hrs.</option>
+                              <option value = "14">14 hrs.</option>
+                              <option value = "15">15 hrs.</option>
+                              <option value = "16">16 hrs.</option>
+                              <option value = "17">17 hrs.</option>
+                              <option value = "18">18 hrs.</option>
+                              <option value = "19">19 hrs.</option>
+                              <option value = "20">20 hrs.</option>
+                              <option value = "21">21 hrs.</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                          <td>Jueves</td>
+                          <td><select  class="btn-group" id = "juevesEntrada" name="juevesEntrada" formControlName="juevesEntrada">
+                              <option value = "7">7 hrs.</option>
+                              <option value = "8">8 hrs.</option>
+                              <option value = "9">9 hrs.</option>
+                              <option value = "10">10 hrs.</option>
+                              <option value = "11">11 hrs.</option>
+                              <option value = "12">12 hrs.</option>
+                              <option value = "13">13 hrs.</option>
+                              <option value = "14">14 hrs.</option>
+                              <option value = "15">15 hrs.</option>
+                              <option value = "16">16 hrs.</option>
+                              <option value = "17">17 hrs.</option>
+                              <option value = "18">18 hrs.</option>
+                              <option value = "19">19 hrs.</option>
+                              <option value = "20">20 hrs.</option>
+                              <option value = "21">21 hrs.</option>
+                            </select></td>
+                          <td><select  class="btn-group" id = "juevesSalida" name="juevesSalida" formControlName="juevesSalida">
+                              <option value = "7">7 hrs.</option>
+                              <option value = "8">8 hrs.</option>
+                              <option value = "9">9 hrs.</option>
+                              <option value = "10">10 hrs.</option>
+                              <option value = "11">11 hrs.</option>
+                              <option value = "12">12 hrs.</option>
+                              <option value = "13">13 hrs.</option>
+                              <option value = "14">14 hrs.</option>
+                              <option value = "15">15 hrs.</option>
+                              <option value = "16">16 hrs.</option>
+                              <option value = "17">17 hrs.</option>
+                              <option value = "18">18 hrs.</option>
+                              <option value = "19">19 hrs.</option>
+                              <option value = "20">20 hrs.</option>
+                              <option value = "21">21 hrs.</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                          <td>Viernes</td>
+                          <td><select  class="btn-group" id = "viernesEntrada" name="viernesEntrada" formControlName="viernesEntrada">
+                              <option value = "7">7 hrs.</option>
+                              <option value = "8">8 hrs.</option>
+                              <option value = "9">9 hrs.</option>
+                              <option value = "10">10 hrs.</option>
+                              <option value = "11">11 hrs.</option>
+                              <option value = "12">12 hrs.</option>
+                              <option value = "13">13 hrs.</option>
+                              <option value = "14">14 hrs.</option>
+                              <option value = "15">15 hrs.</option>
+                              <option value = "16">16 hrs.</option>
+                              <option value = "17">17 hrs.</option>
+                              <option value = "18">18 hrs.</option>
+                              <option value = "19">19 hrs.</option>
+                              <option value = "20">20 hrs.</option>
+                              <option value = "21">21 hrs.</option>
+                            </select></td>
+                          <td><select  class="btn-group" id = "viernesSalida" name="viernesSalida" formControlName="viernesSalida">
+                              <option value = "7">7 hrs.</option>
+                              <option value = "8">8 hrs.</option>
+                              <option value = "9">9 hrs.</option>
+                              <option value = "10">10 hrs.</option>
+                              <option value = "11">11 hrs.</option>
+                              <option value = "12">12 hrs.</option>
+                              <option value = "13">13 hrs.</option>
+                              <option value = "14">14 hrs.</option>
+                              <option value = "15">15 hrs.</option>
+                              <option value = "16">16 hrs.</option>
+                              <option value = "17">17 hrs.</option>
+                              <option value = "18">18 hrs.</option>
+                              <option value = "19">19 hrs.</option>
+                              <option value = "20">20 hrs.</option>
+                              <option value = "21">21 hrs.</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                          <td>Sábado</td>
+                          <td><select  class="btn-group" id = "sabadoEntrada" name="sabadoEntrada" formControlName="sabadoEntrada">
+                              <option value = "7">7 hrs.</option>
+                              <option value = "8">8 hrs.</option>
+                              <option value = "9">9 hrs.</option>
+                              <option value = "10">10 hrs.</option>
+                              <option value = "11">11 hrs.</option>
+                              <option value = "12">12 hrs.</option>
+                              <option value = "13">13 hrs.</option>
+                              <option value = "14">14 hrs.</option>
+                              <option value = "15">15 hrs.</option>
+                              <option value = "16">16 hrs.</option>
+                              <option value = "17">17 hrs.</option>
+                              <option value = "18">18 hrs.</option>
+                              <option value = "19">19 hrs.</option>
+                              <option value = "20">20 hrs.</option>
+                              <option value = "21">21 hrs.</option>
+                            </select></td>
+                          <td><select  class="btn-group" id = "sabadoSalida" name="sabadoSalida" formControlName="sabadoSalida">
+                              <option value = "7">7 hrs.</option>
+                              <option value = "8">8 hrs.</option>
+                              <option value = "9">9 hrs.</option>
+                              <option value = "10">10 hrs.</option>
+                              <option value = "11">11 hrs.</option>
+                              <option value = "12">12 hrs.</option>
+                              <option value = "13">13 hrs.</option>
+                              <option value = "14">14 hrs.</option>
+                              <option value = "15">15 hrs.</option>
+                              <option value = "16">16 hrs.</option>
+                              <option value = "17">17 hrs.</option>
+                              <option value = "18">18 hrs.</option>
+                              <option value = "19">19 hrs.</option>
+                              <option value = "20">20 hrs.</option>
+                              <option value = "21">21 hrs.</option>
+                            </select></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+    <div class="d-grid gap-2  float-end">
+        <button type="submit" class="btn btn-primary width-100" [disabled]="postDisponibilidadForm.invalid">Guardar</button>
+      </div>
+</form>
